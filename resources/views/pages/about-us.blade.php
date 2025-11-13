@@ -1,7 +1,6 @@
 @extends('layouts.page')
 
-@section('title', 'Beranda | Donasi Yauma')
+@section('title', 'Tentang Kami')
 
 @section('content')
-
 @endsection
