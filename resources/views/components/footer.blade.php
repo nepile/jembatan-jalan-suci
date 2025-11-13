@@ -2,7 +2,7 @@
     <div class="container text-center text-md-start">
         <div class="row">
             <div class="col-md-6">
-                <img src="{{ asset('images/logo.png') }}" alt="Yauma Logo" height="50" class="mb-3">
+                <img src="{{ asset('images/logo.jpeg') }}" alt="Yauma Logo" height="50" class="mb-3">
                 <p>
                     Yayasan Umat Mandiri Nusantara (Panti Yauma) merupakan organisasi nirlaba
                     yang bergerak di bidang sosial dan pendidikan sebagai fasilitator
