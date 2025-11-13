@@ -22,10 +22,8 @@
     {{-- images --}}
     <x-banner />
 
-
-
     {{-- Konten Halaman --}}
-    <main class="py-5">
+    <main class="py-5 container-fluid container">
         @yield('content')
     </main>
 
