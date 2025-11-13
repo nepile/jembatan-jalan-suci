@@ -26,9 +26,13 @@ Route::get('/donation-program', function () {
     return view('pages.donation-program');
 })->name('pages.donation-program');
 
-Route::get('/donation-detail', function() {
+Route::get('/donation-detail', function () {
     return view('pages.donation-detail');
 })->name('pages.donation-detail');
+
+Route::get('/confirmation-donation', function () {
+    return view('pages.confirmation-donation');
+})->name('pages.confirmation-donation');
 
 Route::post('/midtrans/payment/{id}', [MidtransController::class, 'createTransaction'])->name('midtrans.payment');
 
@@ -41,4 +45,3 @@ Route::prefix('admin')->group(function () {
     Route::get('/program-donasi', [ProgramController::class, 'index'])->name('admin.program');
     Route::get('/pengaturan', [SettingsController::class, 'index'])->name('admin.settings');
 });
-
