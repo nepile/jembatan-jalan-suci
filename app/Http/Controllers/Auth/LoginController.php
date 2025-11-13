@@ -25,9 +25,9 @@ class LoginController
         
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
-            return response()->json(['status' => 'success', 'message' => 'Login berhasil']);
+            return redirect()->route('admin.dashboard');
         }
         
-        return response()->json(['status' => 'failed', 'message' => 'Email atau kata sandi salah'], 401);
+        return back()->with('danger', 'Email atau kata sandi salah.');
     }
 }

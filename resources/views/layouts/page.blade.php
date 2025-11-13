@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@yield('title', 'Donasi Yauma')</title>
+    <title>@yield('title', 'Panti Asuhan Jembatan Jalan Suci')</title>
 
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -12,15 +12,13 @@
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="{{ asset('css/color.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/page.css') }}">
 </head>
 
 <body>
 
     {{-- Header --}}
     <x-header />
-
-    {{-- images --}}
-    <x-banner />
 
     {{-- Konten Halaman --}}
     <main class="py-5 container-fluid container">
