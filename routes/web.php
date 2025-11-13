@@ -13,6 +13,10 @@ use App\Http\Controllers\Admin\SettingsController;
 Route::get('/', function () {
     return view('pages.home');
 });
+Route::get('general-donation', function () {
+    return view('pages.general-donation');
+});
+
 
 Route::post('/midtrans/payment/{id}', [MidtransController::class, 'createTransaction'])->name('midtrans.payment');
 
