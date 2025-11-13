@@ -1,0 +1,67 @@
+    body {
+        font-family: 'Poppins', sans-serif;
+        background-color: #f8f9fa;
+        height: 100vh;
+    }
+    
+    .login-container {
+        display: flex;
+        height: 100vh;
+    }
+    
+    /* Kiri: form login */
+    .login-left {
+        flex: 1;
+        background-color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 2rem;
+    }
+    
+    .login-form {
+        width: 100%;
+        max-width: 400px;
+    }
+    
+    .login-form h2 {
+        font-weight: 700;
+        margin-bottom: 0.5rem;
+    }
+    
+    .login-form p {
+        color: #6c757d;
+        margin-bottom: 2rem;
+    }
+    
+    .form-control {
+        border-radius: 12px;
+        padding: 10px 14px;
+    }
+    
+    .btn-login {
+        border: none;
+        border-radius: 12px;
+        padding: 10px 0;
+        color: #fff;
+        font-weight: 600;
+        width: 100%;
+        transition: 0.3s;
+    }
+    
+    /* Kanan: ilustrasi */
+    .login-right {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        position: relative;
+        overflow: hidden;
+    }
+    
+    @media (max-width: 992px) {
+        .login-right {
+            display: none;
+        }
+    }

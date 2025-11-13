@@ -1,10 +1,14 @@
 :root {
-    --color-green: #000080;
-    --color-green-dark: var(--color-green);
+    --color-primary: #000080;
+    --color-primary-dark: var(--color-primary);
     --color-orange: #f7941d;
     --color-orange-hover: #e67e00;
     --color-white: #ffffff;
     --color-black: #000000;
+}
+
+.bg-primary {
+    background-color: var(--color-primary) !important;
 }
 
 /* BAGIAN STATISTIK */
@@ -21,7 +25,7 @@
 }
 
 .stats-card {
-    background-color: var(--color-green);
+    background-color: var(--color-primary);
     color: white;
     border-radius: 25px;
     padding: 40px 20px;
@@ -153,10 +157,10 @@ main {
     border-radius: 10px;
 }
 
-.carousel {
+/* .carousel {
     margin: 40px auto;
     max-width: 1000px;
-}
+} */
 
 .carousel-inner img {
     height: 400px;
@@ -171,13 +175,13 @@ main {
 
 /* FOOTER */
 footer {
-    background-color: var(--color-green);
+    background-color: var(--color-primary);
     color: var(--color-white);
     padding: 40px 0 10px;
 }
 
 .footer-bottom {
-    background-color: var(--color-green-dark);
+    background-color: var(--color-primary-dark);
     text-align: center;
     color: var(--color-white);
     padding: 15px 0;
