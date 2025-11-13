@@ -3,6 +3,11 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Payment\MidtransController;
 use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\DonationController;
+use App\Http\Controllers\Admin\ProgramController;
+use App\Http\Controllers\Admin\SettingsController;
+
 
 
 Route::get('/', function () {
@@ -13,3 +18,11 @@ Route::post('/midtrans/payment/{id}', [MidtransController::class, 'createTransac
 
 Route::get('/login', [LoginController::class, 'showLogin'])->name('login');
 Route::post('/login-login', [LoginController::class, 'handleLogin'])->name('login.handle');
+
+Route::prefix('admin')->group(function () {
+    Route::get('/dashboard', [DashboardController::class, 'index'])->name('admin.dashboard');
+    Route::get('/donasi', [DonationController::class, 'index'])->name('admin.donation');
+    Route::get('/program-donasi', [ProgramController::class, 'index'])->name('admin.program');
+    Route::get('/pengaturan', [SettingsController::class, 'index'])->name('admin.settings');
+});
+

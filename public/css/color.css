@@ -1,16 +1,24 @@
 :root {
+<<<<<<< Updated upstream
     --color-primary: #000080;
     --color-primary-dark: var(--color-primary);
+=======
+    --color-green: #000080;
+    --color-green-dark: var(--color-green);
+>>>>>>> Stashed changes
     --color-orange: #f7941d;
     --color-orange-hover: #e67e00;
     --color-white: #ffffff;
     --color-black: #000000;
 }
 
+<<<<<<< Updated upstream
 .bg-primary {
     background-color: var(--color-primary) !important;
 }
 
+=======
+>>>>>>> Stashed changes
 /* BAGIAN STATISTIK */
 .stats-section {
     margin: 60px 0;
@@ -25,7 +33,11 @@
 }
 
 .stats-card {
+<<<<<<< Updated upstream
     background-color: var(--color-primary);
+=======
+    background-color: var(--color-green);
+>>>>>>> Stashed changes
     color: white;
     border-radius: 25px;
     padding: 40px 20px;
@@ -157,10 +169,17 @@ main {
     border-radius: 10px;
 }
 
+<<<<<<< Updated upstream
 /* .carousel {
     margin: 40px auto;
     max-width: 1000px;
 } */
+=======
+.carousel {
+    margin: 40px auto;
+    max-width: 1000px;
+}
+>>>>>>> Stashed changes
 
 .carousel-inner img {
     height: 400px;
@@ -175,13 +194,21 @@ main {
 
 /* FOOTER */
 footer {
+<<<<<<< Updated upstream
     background-color: var(--color-primary);
+=======
+    background-color: var(--color-green);
+>>>>>>> Stashed changes
     color: var(--color-white);
     padding: 40px 0 10px;
 }
 
 .footer-bottom {
+<<<<<<< Updated upstream
     background-color: var(--color-primary-dark);
+=======
+    background-color: var(--color-green-dark);
+>>>>>>> Stashed changes
     text-align: center;
     color: var(--color-white);
     padding: 15px 0;
