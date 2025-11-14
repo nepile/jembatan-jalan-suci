@@ -3,6 +3,61 @@
 @section('title', 'Data Donasi')
 
 @section('content')
+{{-- CSS Kustom untuk Transformasi Tabel Responsif (Mobile View) --}}
+<style>
+    /* Target layar di bawah breakpoint sm (640px) */
+    @media (max-width: 639px) {
+        /* Sembunyikan header tabel */
+        thead {
+            display: none;
+        }
+
+        /* Perlakukan baris tabel (tr) sebagai kartu pada mobile */
+        tr {
+            display: block;
+            margin-bottom: 1rem;
+            border: 1px solid #e5e7eb; 
+            border-radius: 0.75rem; /* Lebih membulat */
+            background-color: white;
+            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+        }
+
+        /* Perlakukan sel tabel (td) sebagai elemen blok */
+        td {
+            display: block;
+            text-align: right !important; /* Data berada di kanan */
+            padding: 0.75rem 1.5rem; 
+            border-bottom: 1px solid #f3f4f6;
+        }
+
+        /* Tambahkan label kolom sebelum data (menggunakan data-label) */
+        td::before {
+            content: attr(data-label);
+            float: left;
+            font-weight: 600; 
+            color: #1f2937; 
+            margin-right: 1rem;
+        }
+        
+        /* Hapus garis pemisah pada sel terakhir di dalam kartu */
+        tr td:last-child {
+            border-bottom: none;
+        }
+
+        /* Pastikan tombol aksi menempati lebar penuh di mobile */
+        .mobile-full-width-actions .flex {
+            flex-direction: column;
+            gap: 0.5rem; /* Jarak antar tombol */
+        }
+
+        .mobile-full-width-actions .flex button {
+            width: 100%;
+            justify-content: center;
+            display: flex;
+        }
+    }
+</style>
+
 <h1 class="text-2xl font-bold text-blue-900 mb-6">Data Donasi</h1>
 
 {{-- Ringkasan Statistik --}}
@@ -54,11 +109,12 @@
     </form>
 </div>
 
-<div class="overflow-x-auto bg-white rounded-xl shadow-lg border border-gray-200">
+{{-- Hapus overflow-x-auto dari sini agar tidak terjadi horizontal scroll di mobile --}}
+<div class="bg-white rounded-xl shadow-lg border border-gray-200">
     <table class="min-w-full text-sm">
         <thead class="bg-blue-900 text-white">
             <tr>
-                <th class="px-4 py-3 text-left">#</th>
+                <th class="px-4 py-3 text-left">No</th>
                 <th class="px-4 py-3 text-left">Donatur</th>
                 <th class="px-4 py-3 text-left">Nominal</th>
                 <th class="px-4 py-3 text-left">Telepon</th>
@@ -70,16 +126,17 @@
         
         <tbody class="divide-y divide-gray-100">
             @foreach ($donations as $donate)
-            <tr class="hover:bg-gray-50 transition-colors">
-                <td class="px-4 py-3 font-medium text-gray-700">{{$loop->iteration}}</td>
-                <td class="px-4 py-3">
+            <tr class="hover:bg-gray-50 transition-colors sm:border-b">
+                {{-- PENTING: Tambahkan data-label untuk mobile view --}}
+                <td class="px-4 py-3 font-medium text-gray-700" data-label="No">{{$loop->iteration}}</td>
+                <td class="px-4 py-3" data-label="Donatur">
                     <div class="font-semibold text-gray-900">{{$donate->full_name}}</div>
                     <div class="text-gray-500 text-xs">{{$donate->email}}</div>
                 </td>
-                <td class="px-4 py-3 @if($donate->status == 'Sukses') text-green-600 @elseif($donate->status == 'Menunggu') text-yellow-600 @else text-red-600 @endif font-semibold">Rp {{ number_format($donate->amount, 0, ',', '.') }}</td>
-                <td class="px-4 py-3 text-gray-700">{{$donate->phone_number}}</td>
-                <td class="px-4 py-3 text-gray-700">{{ucfirst(trans("$donate->bank"))}}</td>
-                <td class="px-4 py-3">
+                <td class="px-4 py-3 @if($donate->status == 'Sukses') text-green-600 @elseif($donate->status == 'Menunggu') text-yellow-600 @else text-red-600 @endif font-semibold" data-label="Nominal">Rp {{ number_format($donate->amount, 0, ',', '.') }}</td>
+                <td class="px-4 py-3 text-gray-700" data-label="Telepon">{{$donate->phone_number}}</td>
+                <td class="px-4 py-3 text-gray-700" data-label="Bank">{{ucfirst(trans("$donate->bank"))}}</td>
+                <td class="px-4 py-3" data-label="Status">
                     @if ($donate->status == 'Menunggu')
                     <span class="px-2 py-1 text-xs font-semibold rounded-full bg-yellow-100 text-yellow-600">
                         {{$donate->status}}
@@ -94,14 +151,11 @@
                     </span>
                     @endif
                 </td>
-                <td class="px-4 py-3 text-center">
+                <td class="px-4 py-3 text-center mobile-full-width-actions" data-label="Aksi">
                     <div class="flex justify-center gap-2">
-                        <button  class="px-3 py-1 text-xs bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition">
+                        <button  class="px-3 py-1 text-xs bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition">
                             Detail
                         </button>
-
-
-
                         @if ($donate->status != 'Sukses')
                         <button class="px-3 py-1 text-xs bg-red-500 text-white rounded-lg hover:bg-red-600 transition">
                             Hapus
