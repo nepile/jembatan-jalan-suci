@@ -19,6 +19,7 @@ return new class extends Migration
             $table->text('description');
             $table->date('deadline');
             $table->integer('target');
+            $table->string('slug');
             $table->enum('status', ['AKTIF', 'NONAKTIF'])->default('AKTIF');
             $table->timestamps();
         });
