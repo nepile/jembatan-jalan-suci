@@ -1,6 +1,6 @@
 @extends('layouts.page')
 
-@section('title', 'Tentang Kami | Yauma')
+@section('title', 'Jembatan Jalan Suci')
 
 @section('content')
     <!-- Hero Section -->
@@ -9,11 +9,17 @@
             <div class="row align-items-center">
                 <div class="col-lg-6">
                     <h1 class="display-5 fw-bold mb-3">Jembata Jalan Suci</h1>
-                    <h2 class="h4 mb-4">Rumah Kasih untuk Anak Yatim & Dhuafa</h2>
+                    <h2 class="h4 mb-4">Nama : Panti Asuhan Jembatan Jalan Suci
+                        <br>Alamat : Jln Jemadi Gg Kelapa III No 57 Kel. Pulo Brayan Darat II Medan Timur Kota Medan
+                    </h2>
                     <p class="lead mb-4">
-                        Kami adalah panti asuhan yang berdedikasi memberikan tempat tinggal, pendidikan, dan kasih sayang
-                        kepada anak-anak yatim dan dhuafa.
-                        Setiap senyummu adalah harapan bagi mereka.
+                        Alamat : Jln Jemadi Gg Kelapa III No 57 Kel. Pulo Brayan Darat II Medan Timur Kota Medan
+                        Berdiri pada tahun 2021
+                        Jumlah anak asuh 38 orang
+                        Pengurus 6 orang
+                        Rekening donasi :
+                        BCA 8205409331 Relahati Laia
+                        BRI 108401003140535 Yayasan Jembatan Jalan Suci
                     </p>
                     <a href="/donasi" class="btn btn-primary btn-lg px-5 rounded-pill fw-bold shadow">
                         Donasi Sekarang
@@ -87,24 +93,17 @@
     <!-- Tim Pengurus -->
     <section class="py-5">
         <div class="container">
-            <h2 class="text-center mb-5 fw-bold">Pengurus Panti Asuhan</h2>
+            <h2 class="text-center mb-5 fw-bold">Struktur Pengurus Panti Asuhan</h2>
             <div class="row g-4 justify-content-center">
-                <div class="col-md-4">
-                    <div class="text-center">
-                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Ust. Ahmad"
-                            class="rounded-circle mb-3" width="120">
-                        <h5 class="fw-bold">Ust. Ahmad Fauzi</h5>
-                        <p class="text-primary">Pimpinan Panti</p>
+
+                <!-- Wrapper kotak gambar -->
+                <div class="text-center">
+                    <div class="mx-auto mb-4" style="width: 500px; height: 500px;">
+                        <img src="{{ asset('images/pengurus.jpeg') }}" alt="Ust. Ahmad Fauzi" class="img-fluid w-100 h-100"
+                            style="object-fit: cover; border: 4px solid #ddd; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <div class="text-center">
-                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Bu Siti"
-                            class="rounded-circle mb-3" width="120">
-                        <h5 class="fw-bold">Siti Nurhaliza, S.Pd</h5>
-                        <p class="text-primary">Pengajar & Pembina</p>
-                    </div>
-                </div>
+
             </div>
         </div>
     </section>

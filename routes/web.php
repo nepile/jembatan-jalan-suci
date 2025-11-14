@@ -34,7 +34,7 @@ Route::get('/confirmation-donation', function () {
     return view('pages.confirmation-donation');
 })->name('pages.confirmation-donation');
 
-Route::get('/pages.gallery', function (){
+Route::get('/pages.gallery', function () {
     return view('pages.gallery');
 })->name('pages.gallery');
 
