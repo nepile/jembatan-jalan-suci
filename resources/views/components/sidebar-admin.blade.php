@@ -23,6 +23,11 @@
             Program Donasi
         </a>
 
+        <a href="{{ route('admin.gallery') }}"
+            class="block px-4 py-2 rounded-md {{ request()->routeIs('admin.gallery') ? 'bg-blue-700 text-white' : 'text-gray-200 hover:bg-blue-800' }}">
+            Galeri
+        </a>
+
         <a href="{{ route('admin.settings') }}"
             class="block px-4 py-2 rounded-md {{ request()->routeIs('admin.settings') ? 'bg-blue-700 text-white' : 'text-gray-200 hover:bg-blue-800' }}">
             Pengaturan

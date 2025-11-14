@@ -7,7 +7,7 @@ use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\DonationController;
 use App\Http\Controllers\Admin\ProgramController;
 use App\Http\Controllers\Admin\SettingsController;
-use App\Models\DonationProgram;
+use App\Http\Controllers\Admin\GalleryController;
 
 Route::get('/', function () {
     return view('pages.home');
@@ -53,4 +53,10 @@ Route::prefix('admin')->group(function () {
         Route::delete('/delete/{id}', [ProgramController::class, 'destroy'])->name('admin.program.delete');
     });
     Route::get('/pengaturan', [SettingsController::class, 'index'])->name('admin.settings');
+
+    Route::prefix('/gallery')->group(function () {
+        Route::get('/', [GalleryController::class, 'index'])->name('admin.gallery');
+        Route::post('/create', [GalleryController::class, 'create'])->name('admin.gallery.create');
+        Route::delete('/delete/{id}', [GalleryController::class, 'destroy'])->name('admin.gallery.delete');
+    });
 });
