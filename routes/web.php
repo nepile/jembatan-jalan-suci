@@ -8,6 +8,7 @@ use App\Http\Controllers\Admin\DonationController;
 use App\Http\Controllers\Admin\ProgramController;
 use App\Http\Controllers\Admin\SettingsController;
 use App\Http\Controllers\Admin\GalleryController;
+use App\Http\Controllers\Admin\AdminController;
 
 Route::get('/', function () {
     return view('pages.home');
@@ -65,4 +66,6 @@ Route::prefix('admin')->group(function () {
         Route::post('/create', [GalleryController::class, 'create'])->name('admin.gallery.create');
         Route::delete('/delete/{id}', [GalleryController::class, 'destroy'])->name('admin.gallery.delete');
     });
+
+    Route::get('/admin', [AdminController::class, 'index'])->name('admin.admin');
 });
