@@ -18,7 +18,8 @@ class DonationProgramSeeder extends Seeder
             'title' => 'Donasi Bencana Alam',
             'description' => 'iya ini donasi',
             'deadline' => date('Y-m-d', strtotime('now')),
-            'target' => 2000000
+            'target' => 2000000,
+            'status' => 'AKTIF'
         ]);
     }
 }

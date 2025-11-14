@@ -12,6 +12,9 @@
 <div class="login-container">
   <div class="login-left">
     <div class="login-form">
+      <a href="{{route('pages.home')}}">
+        <img src="{{ asset('images/logo.jpeg') }}" width="100" alt="">
+      </a>
       <h2>Syalom,<br>Selamat Datang</h2>
       <p>Silakan masuk untuk mendapatkan akses</p>
       

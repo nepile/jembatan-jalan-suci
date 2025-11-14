@@ -2,7 +2,7 @@
     <!-- Logo -->
     <div class="p-6 border-b border-blue-800 flex items-center justify-center">
         <a href="{{ route('admin.dashboard') }}" class="flex flex-col items-center">
-            <img src="{{ asset('images/logo.png') }}" alt="Logo" class="h-12 w-12 mb-2">
+            <img src="{{ asset('images/logo.jpeg') }}" alt="Logo" width="100" class="rounded mb-2">
         </a>
     </div>
 
@@ -28,5 +28,9 @@
             Pengaturan
         </a>
 
+        <form action="{{ route('logout.handle') }}" method="POST" class="block px-4 py-2 rounded-md">
+            @csrf
+            <button type="submit">Keluar</button>
+        </a>
     </nav>
 </aside>

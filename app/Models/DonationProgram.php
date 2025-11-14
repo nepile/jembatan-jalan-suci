@@ -16,6 +16,7 @@ class DonationProgram extends Model
         'description',
         'deadline',
         'target',
+        'status',
     ];
 
     public function donation(): HasMany 
