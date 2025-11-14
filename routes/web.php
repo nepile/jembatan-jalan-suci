@@ -41,11 +41,12 @@ Route::get('/pages.gallery', function (){
 Route::post('/midtrans/payment/{id}', [MidtransController::class, 'createTransaction'])->name('midtrans.payment');
 
 Route::get('/login', [LoginController::class, 'showLogin'])->name('login');
-Route::post('/login-login', [LoginController::class, 'handleLogin'])->name('login.handle');
+Route::post('/login-handle', [LoginController::class, 'handleLogin'])->name('login.handle');
+Route::post('/logout-handle', [LoginController::class, 'handleLogout'])->name('logout.handle');
 
 Route::prefix('admin')->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('admin.dashboard');
-    Route::get('/donasi', [DonationController::class, 'index'])->name('admin.donation');
+    Route::get('/donation', [DonationController::class, 'index'])->name('admin.donation');
     Route::get('/program-donasi', [ProgramController::class, 'index'])->name('admin.program');
     Route::get('/pengaturan', [SettingsController::class, 'index'])->name('admin.settings');
 });

@@ -30,4 +30,10 @@ class LoginController
         
         return back()->with('danger', 'Email atau kata sandi salah.');
     }
+
+    public function handleLogout(Request $request)
+    {
+        Auth::logout();
+        return redirect()->route('login')->with('info', 'Anda telah keluar');
+    }
 }
