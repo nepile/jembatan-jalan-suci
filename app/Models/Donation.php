@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Support\Str;
 
 class Donation extends Model
 {
@@ -26,5 +27,16 @@ class Donation extends Model
     public function program(): BelongsTo
     {
         return $this->belongsTo(DonationProgram::class, 'program_id');
+    }
+
+    protected static function boot()
+    {
+        parent::boot();
+
+        static::creating(function ($model) {
+            if (!$model->donation_id) {
+                $model->donation_id = Str::uuid();
+            }
+        });
     }
 }

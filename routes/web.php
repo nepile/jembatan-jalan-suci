@@ -7,8 +7,7 @@ use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\DonationController;
 use App\Http\Controllers\Admin\ProgramController;
 use App\Http\Controllers\Admin\SettingsController;
-
-
+use App\Models\DonationProgram;
 
 Route::get('/', function () {
     return view('pages.home');
@@ -47,6 +46,11 @@ Route::post('/logout-handle', [LoginController::class, 'handleLogout'])->name('l
 Route::prefix('admin')->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('admin.dashboard');
     Route::get('/donation', [DonationController::class, 'index'])->name('admin.donation');
-    Route::get('/program-donasi', [ProgramController::class, 'index'])->name('admin.program');
+    Route::prefix('/donation-program')->group(function() {
+        Route::get('/', [ProgramController::class, 'index'])->name('admin.program');
+        Route::post('/create', [ProgramController::class, 'store'])->name('admin.program.create');
+        Route::put('/update/{id}', [ProgramController::class, 'update'])->name('admin.program.update');
+        Route::delete('/delete/{id}', [ProgramController::class, 'destroy'])->name('admin.program.delete');
+    });
     Route::get('/pengaturan', [SettingsController::class, 'index'])->name('admin.settings');
 });
