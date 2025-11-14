@@ -12,15 +12,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('donation_programs', function (Blueprint $table) {
-            $table->uuid('program_id')->primary()->default(Str::uuid());
-            $table->text('banner');
+        Schema::create('galleries', function (Blueprint $table) {
+            $table->uuid('gallery_id')->primary()->default(Str::uuid());
             $table->string('title');
-            $table->text('description');
-            $table->date('deadline');
-            $table->integer('target');
-            $table->string('slug');
-            $table->enum('status', ['AKTIF', 'NONAKTIF'])->default('AKTIF');
+            $table->text('banner');
             $table->timestamps();
         });
     }
@@ -30,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('donation_programs');
+        Schema::dropIfExists('galleries');
     }
 };
