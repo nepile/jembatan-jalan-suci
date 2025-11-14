@@ -8,7 +8,7 @@
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-6">
-                    <h1 class="display-5 fw-bold mb-3">Jembata Jalan Suci</h1>
+                    <h1 class="display-5 fw-bold mb-3">Jembatan Jalan Suci</h1>
                     <h2 class="h4 mb-4">Nama : Panti Asuhan Jembatan Jalan Suci
                         <br>Alamat : Jln Jemadi Gg Kelapa III No 57 Kel. Pulo Brayan Darat II Medan Timur Kota Medan
                     </h2>
