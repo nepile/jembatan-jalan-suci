@@ -23,6 +23,11 @@
                         Donasi</a>
                 </li>
 
+                 <li class="nav-item pe-4 {{ request()->routeIs('pages.gallery') ? 'active' : '' }}">
+                    <a class="nav-link" aria-current="page" href="{{ route('pages.gallery') }}">
+                        Galeri</a>
+                </li>
+
                 {{-- <li class="nav-item pe-4">
           <a class="nav-link" aria-current="page" href="">Kegiatan</a>
         </li>

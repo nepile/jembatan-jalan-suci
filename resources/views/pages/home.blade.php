@@ -171,7 +171,7 @@
         @endforeach
         {{-- Tombol menuju halaman galeri lengkap --}}
         <div class="text-center mt-4">
-            <a href="#" class="btn btn-primary fw-bold px-4 py-2">
+            <a href="{{ route('pages.gallery') }}" class="btn btn-primary fw-bold px-4 py-2">
                 Lihat Galeri
             </a>
         </div>

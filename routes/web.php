@@ -34,6 +34,10 @@ Route::get('/confirmation-donation', function () {
     return view('pages.confirmation-donation');
 })->name('pages.confirmation-donation');
 
+Route::get('/pages.gallery', function (){
+    return view('pages.gallery');
+})->name('pages.gallery');
+
 Route::post('/midtrans/payment/{id}', [MidtransController::class, 'createTransaction'])->name('midtrans.payment');
 
 Route::get('/login', [LoginController::class, 'showLogin'])->name('login');
