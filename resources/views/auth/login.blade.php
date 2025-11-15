@@ -7,6 +7,7 @@
     <title>Silakan Masuk | Panti Asuhan Jembatan Jalan Suci</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/auth.css') }}">
+    <link rel="icon" href="{{ asset('images/other/logo.jpeg') }}">
 </head>
 
 <body>
