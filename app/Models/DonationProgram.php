@@ -21,9 +21,9 @@ class DonationProgram extends Model
         'status',
     ];
 
-    public function donation(): HasMany 
+    public function donation(): HasMany
     {
-        return $this->hasMany(Donation::class, 'donation_id');
+        return $this->hasMany(Donation::class, 'program_id');
     }
 
     protected static function boot()

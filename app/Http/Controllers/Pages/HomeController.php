@@ -3,12 +3,17 @@
 namespace App\Http\Controllers\Pages;
 
 use App\Http\Controllers\Controller;
+use App\Models\DonationProgram;
 use Illuminate\Http\Request;
 
-class HomeController extends Controller
+class HomeController
 {
     public function index()
     {
-        return view('pages.home');
+        $data = [
+            'programs' => DonationProgram::where('status', 'AKTIF')->limit(3)->get(),
+        ];
+
+        return view('pages.home', $data);
     }
 }

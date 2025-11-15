@@ -19,9 +19,15 @@ class Donation extends Model
         'phone_number',
         'hope',
         'bank',
+        'va_number',
+        'expiry_time',
         'amount',
         'status',
         'program_id'
+    ];
+
+    protected $casts = [
+        'amount' => 'integer',
     ];
 
     public function program(): BelongsTo

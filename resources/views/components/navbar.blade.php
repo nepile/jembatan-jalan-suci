@@ -5,34 +5,39 @@
     </button> --}}
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item pe-4 {{ request()->routeIs('pages.home') ? 'active' : '' }}">
-                    <a class="nav-link" aria-current="page" href="{{ route('pages.home') }}">Beranda</a>
+                <li class="nav-item pe-4 {{ request()->routeIs('pages.home') ? 'active-menu' : '' }}">
+                    <a class="nav-link page-link page-link" aria-current="page"
+                        href="{{ route('pages.home') }}">Beranda</a>
                 </li>
-                <li class="nav-item pe-4 {{ request()->routeIs('pages.about-us') ? 'active' : '' }}">
-                    <a class="nav-link" aria-current="page" href="{{ route('pages.about-us') }}">Tentang Kami</a>
+                <li class="nav-item pe-4 {{ request()->routeIs('pages.about-us') ? 'active-menu' : '' }}">
+                    <a class="nav-link page-link" aria-current="page" href="{{ route('pages.about-us') }}">Tentang
+                        Kami</a>
                 </li>
-                <li class="nav-item pe-4 {{ request()->routeIs('pages.donation-program') ? 'active' : '' }}">
-                    <a class="nav-link" aria-current="page" href="{{ route('pages.donation-program') }}">Program
+                <li class="nav-item pe-4 {{ request()->routeIs('pages.donation-program') ? 'active-menu' : '' }}">
+                    <a class="nav-link page-link" aria-current="page"
+                        href="{{ route('pages.donation-program') }}">Program
                         Donasi</a>
                 </li>
-                <li class="nav-item pe-4 {{ request()->routeIs('pages.general-donation') ? 'active' : '' }}">
-                    <a class="nav-link" aria-current="page" href="{{ route('pages.general-donation') }}">Donasi Umum</a>
-                </li>
-                <li class="nav-item pe-4 {{ request()->routeIs('pages.confirmation-donation') ? 'active' : '' }}">
-                    <a class="nav-link" aria-current="page" href="{{ route('pages.confirmation-donation') }}">Konfirmasi
+                {{-- <li class="nav-item pe-4 {{ request()->routeIs('pages.general-donation') ? 'active-menu' : '' }}">
+                    <a class="nav-link page-link" aria-current="page"
+                        href="{{ route('pages.general-donation') }}">Donasi Umum</a>
+                </li> --}}
+                <li class="nav-item pe-4 {{ request()->routeIs('pages.confirmation-donation') ? 'active-menu' : '' }}">
+                    <a class="nav-link page-link" aria-current="page"
+                        href="{{ route('pages.confirmation-donation') }}">Konfirmasi
                         Donasi</a>
                 </li>
 
-                 <li class="nav-item pe-4 {{ request()->routeIs('pages.gallery') ? 'active' : '' }}">
-                    <a class="nav-link" aria-current="page" href="{{ route('pages.gallery') }}">
+                <li class="nav-item pe-4 {{ request()->routeIs('pages.gallery') ? 'active-menu' : '' }}">
+                    <a class="nav-link page-link" aria-current="page" href="{{ route('pages.gallery') }}">
                         Galeri</a>
                 </li>
 
                 {{-- <li class="nav-item pe-4">
-          <a class="nav-link" aria-current="page" href="">Kegiatan</a>
+          <a class="nav-link page-link" aria-current="page" href="">Kegiatan</a>
         </li>
         <li class="nav-item pe-4">
-          <a class="nav-link" aria-current="page" href="">Formulir</a>
+          <a class="nav-link page-link" aria-current="page" href="">Formulir</a>
         </li> --}}
             </ul>
         </div>
