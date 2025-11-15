@@ -1,6 +1,6 @@
 @extends('layouts.page')
 
-@section('title', 'Jembatan Jalan Suci')
+@section('title', 'Tentang Kami')
 
 @section('content')
     <!-- Hero Section -->

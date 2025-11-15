@@ -1,6 +1,6 @@
 @extends('layouts.page')
 
-@section('title', 'Donasi - Panti Asuhan')
+@section('title', 'Formulir Donasi')
 
 @section('content')
     <style>

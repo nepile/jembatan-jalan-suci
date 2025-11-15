@@ -1,6 +1,6 @@
 @extends('layouts.page')
 
-@section('title', 'Galeri Kegiatan | Donasi Yauma')
+@section('title', 'Galeri Kegiatan')
 
 @section('content')
 

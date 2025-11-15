@@ -1,6 +1,6 @@
 @extends('layouts.page')
 
-@section('title', 'general | donation')
+@section('title', 'Donasi Umum')
 
 @section('content')
     <x-banner />

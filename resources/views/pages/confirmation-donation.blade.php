@@ -1,6 +1,6 @@
 @extends('layouts.page')
 
-@section('title', 'Cek No. Invoice | Yauma')
+@section('title', 'Konfirmasi Donasi')
 
 @section('content')
     <style>

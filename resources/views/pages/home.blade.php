@@ -1,6 +1,6 @@
 @extends('layouts.page')
 
-@section('title', 'Beranda | Donasi Yauma')
+@section('title', 'Beranda')
 
 @section('content')
 
