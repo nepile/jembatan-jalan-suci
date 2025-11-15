@@ -19,8 +19,10 @@ return new class extends Migration
             $table->string('honorary_call');
             $table->string('email');
             $table->string('phone_number');
-            $table->text('hope');
+            $table->text('hope')->nullable()->default(null);
             $table->string('bank');
+            $table->string('va_number');
+            $table->timestamp('expiry_time');
             $table->integer('amount');
             $table->enum('status', ['Menunggu', 'Sukses', 'Gagal', 'Kadaluarsa', 'Dibatalkan']);
             $table->foreignUuid('program_id')->constrained('donation_programs', 'program_id')->cascadeOnUpdate()->cascadeOnDelete();

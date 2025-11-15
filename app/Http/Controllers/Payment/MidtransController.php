@@ -10,7 +10,7 @@ class MidtransController
     public function createTransaction(string $id, Request $request)
     {
         $orderId = 'DONASI-' . time();
-        
+
         $donation = new Donation();
 
         $donation->order_id = $orderId;
@@ -19,13 +19,12 @@ class MidtransController
         $donation->email = $request->input('email');
         $donation->phone_number = $request->input('phone_number');
         $donation->hope = $request->input('hope');
-        $donation->bank = $request->input('bank');
-        $donation->amount = $request->input('amount');
+        $donation->bank = strtolower($request->input('bank'));
+        $donation->amount = (int) preg_replace('/[^0-9]/', '', $request->input('amount'));
         $donation->status = 'Menunggu';
         $donation->program_id = $id;
 
-        $donation->save();
-        
+
         $params = [
             'payment_type' => 'bank_transfer',
             'transaction_details' => [
@@ -43,19 +42,21 @@ class MidtransController
 
         try {
             $response = \Midtrans\CoreApi::charge($params);
-            return response()->json($response);
+
+            $donation->va_number = $response->va_numbers[0]->va_number;
+            $donation->expiry_time = $response->expiry_time;
+
+            $donation->save();
+
+            return redirect()->route('pages.bill-invoice', $orderId)->with('success', 'Berhasil membuat tagihan.');
         } catch (\Exception $e) {
-            return response()->json(['error' => $e->getMessage()], 400);
+            return back()->with('danger', $e->getMessage());
         }
-        dd($donation);
     }
-    
+
     public function callback(Request $request)
     {
         $orderId        = $request->input('order_id');
-        $statusCode     = $request->input('status_code');
-        $grossAmount    = $request->input('gross_amount');
-        $signatureKey   = $request->input('signature_key');
         $transactionStatus = $request->input('transaction_status');
         $fraudStatus    = $request->input('fraud_status');
 

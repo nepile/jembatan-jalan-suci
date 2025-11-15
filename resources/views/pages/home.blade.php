@@ -74,8 +74,8 @@
                     <div class="d-flex justify-content-center gap-3">
                         <a href="{{ route('pages.donation-program') }}" class="btn btn-primary fw-bold btn-lg">Program
                             Donasi</a>
-                        <a href="{{ route('pages.general-donation') }}" class="btn btn-outline-light fw-bold btn-lg">Donasi
-                            Umum</a>
+                        <a href="{{ route('pages.about-us') }}" class="btn btn-outline-light fw-bold btn-lg">Tentang
+                            Kami</a>
                     </div>
                 </div>
             </div>
@@ -95,25 +95,24 @@
 
             {{-- Dummy Card Program --}}
             <div class="row g-4 mb-5">
-                @php
-                    $programImages = ['image copy.png', 'image copy 2.png', 'image copy 3.png'];
-                @endphp
-
-                @for ($i = 0; $i < 3; $i++)
+                @foreach ($programs as $program)
                     <div class="col-lg-4 col-md-6">
                         <div class="card h-100 shadow-sm border-0">
-                            <img src="{{ asset('images/' . $programImages[$i]) }}" class="card-img-top object-fit-cover"
-                                alt="Program {{ $i + 1 }}">
+                            <img src="{{ asset($program->banner) }}" class="card-img-top object-fit-cover"
+                                alt="Program {{ $program->title }}"
+                                onerror="this.onerror=null;this.src='https://placehold.co/600x400';">
                             <div class="card-body">
-                                <h5 class="card-title fw-bold secondary-color">Beasiswa Pendidikan Anak Yatim</h5>
-                                <p class="card-text text-muted">Program ini bertujuan untuk menjamin akses pendidikan formal
-                                    dan informal bagi anak-anak di panti.</p>
-                                <a href="{{ route('pages.donation-detail') }}" class="btn btn-sm btn-outline-primary">Donasi
+                                <h5 class="card-title fw-bold secondary-color">{{ $program->title }}</h5>
+                                <p class="card-text text-muted">
+                                    {{ $program->description }}
+                                </p>
+                                <a href="{{ route('pages.donation-detail', $program->slug) }}"
+                                    class="btn btn-sm btn-outline-primary">Donasi
                                     Sekarang</a>
                             </div>
                         </div>
                     </div>
-                @endfor
+                @endforeach
             </div>
 
             <div class="text-center mt-4">

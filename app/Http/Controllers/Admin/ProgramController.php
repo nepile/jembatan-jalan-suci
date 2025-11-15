@@ -7,7 +7,7 @@ use App\Models\DonationProgram;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 
-class ProgramController 
+class ProgramController
 {
     public function index()
     {
@@ -39,7 +39,7 @@ class ProgramController
             'deadline' => $request->deadline,
             'target' => $request->target,
             'status' => 'AKTIF',
-            'slug' => Str::slug($request->title),
+            'slug' => Str::slug($request->title . time()),
         ]);
 
         return back()->with('success', 'Program donasi berhasil ditambahkan.');
@@ -96,5 +96,4 @@ class ProgramController
 
         return back()->with('success', 'Program berhasil dihapus.');
     }
-
 }

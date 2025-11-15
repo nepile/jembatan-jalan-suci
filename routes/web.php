@@ -8,15 +8,17 @@ use App\Http\Controllers\Admin\DonationController;
 use App\Http\Controllers\Admin\ProgramController;
 use App\Http\Controllers\Admin\SettingsController;
 use App\Http\Controllers\Admin\GalleryController;
+use App\Http\Controllers\Pages\DonationController as PagesDonationController;
 use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\Pages\ConfirmationDonationController;
+use App\Http\Controllers\Pages\DonationProgramController;
+use App\Http\Controllers\Pages\HomeController;
 
-Route::get('/', function () {
-    return view('pages.home');
-})->name('pages.home');
+Route::get('/', [HomeController::class, 'index'])->name('pages.home');
 
-Route::get('general-donation', function () {
-    return view('pages.general-donation');
-})->name('pages.general-donation');
+// Route::get('general-donation', function () {
+//     return view('pages.general-donation');
+// })->name('pages.general-donation');
 
 Route::get('/about-us', function () {
     return view('pages.about-us');
@@ -26,22 +28,18 @@ Route::get('/donation-program', function () {
     return view('pages.donation-program');
 })->name('pages.donation-program');
 
-Route::get('/donation-detail', function () {
-    return view('pages.donation-detail');
-})->name('pages.donation-detail');
+Route::get('/donation-detail/{slug}', [DonationProgramController::class, 'showDonationDetail'])->name('pages.donation-detail');
+Route::get('/donation-bank/{slug}', [PagesDonationController::class, 'showDonationFill'])->name('pages.donation-bank');
+Route::get('/bill-invoice/{orderId}', [PagesDonationController::class, 'showBillInvoice'])->name('pages.bill-invoice');
 
-Route::get('/confirmation-donation', function () {
-    return view('pages.confirmation-donation');
-})->name('pages.confirmation-donation');
+Route::prefix('/confirmation-donation')->group(function () {
+    Route::get('/', [ConfirmationDonationController::class, 'index'])->name('pages.confirmation-donation');
+    Route::get('/search', [ConfirmationDonationController::class, 'searchInvoice'])->name('pages.confirmation-donation.search');
+});
 
 Route::get('/pages.gallery', function () {
     return view('pages.gallery');
 })->name('pages.gallery');
-
-Route::get('/donation-bank', function () {
-    return view('pages.donation-bank');
-})->name('pages.donation-bank');
-
 
 
 Route::post('/midtrans/payment/{id}', [MidtransController::class, 'createTransaction'])->name('midtrans.payment');
@@ -53,7 +51,7 @@ Route::post('/logout-handle', [LoginController::class, 'handleLogout'])->name('l
 Route::prefix('admin')->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('admin.dashboard');
     Route::get('/donation', [DonationController::class, 'index'])->name('admin.donation');
-    Route::prefix('/donation-program')->group(function() {
+    Route::prefix('/donation-program')->group(function () {
         Route::get('/', [ProgramController::class, 'index'])->name('admin.program');
         Route::post('/create', [ProgramController::class, 'store'])->name('admin.program.create');
         Route::put('/update/{id}', [ProgramController::class, 'update'])->name('admin.program.update');
