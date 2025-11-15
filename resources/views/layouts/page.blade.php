@@ -20,6 +20,18 @@
     <!-- Lightbox JS (butuh jQuery) -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script>
+
+    <style>
+        .nav-item .page-link {
+            color: #fff;
+        }
+
+        .active-menu {
+            text-decoration: underline;
+            color: #fff;
+            font-weight: bold;
+        }
+    </style>
 </head>
 
 <body>
