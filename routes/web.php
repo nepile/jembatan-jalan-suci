@@ -59,7 +59,10 @@ Route::middleware('auth')->group(function () {
             Route::put('/update/{id}', [ProgramController::class, 'update'])->name('admin.program.update');
             Route::delete('/delete/{id}', [ProgramController::class, 'destroy'])->name('admin.program.delete');
         });
+        
         Route::get('/pengaturan', [SettingsController::class, 'index'])->name('admin.settings');
+        Route::post('/pengaturan/update-password', [SettingsController::class, 'updatePassword'])
+            ->name('admin.settings.updatePassword');
 
         Route::prefix('/gallery')->group(function () {
             Route::get('/', [GalleryController::class, 'index'])->name('admin.gallery');
