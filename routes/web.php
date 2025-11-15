@@ -17,6 +17,7 @@ use App\Http\Controllers\Pages\HomeController;
 
 Route::get('/', [HomeController::class, 'index'])->name('pages.home');
 
+
 // Route::get('general-donation', function () {
 //     return view('pages.general-donation');
 // })->name('pages.general-donation');
@@ -41,31 +42,36 @@ Route::get('/pages.gallery', [PagesGalleryController::class, 'index'])->name('pa
 
 Route::post('/midtrans/payment/{id}', [MidtransController::class, 'createTransaction'])->name('midtrans.payment');
 
-Route::get('/login', [LoginController::class, 'showLogin'])->name('login');
-Route::post('/login-handle', [LoginController::class, 'handleLogin'])->name('login.handle');
-Route::post('/logout-handle', [LoginController::class, 'handleLogout'])->name('logout.handle');
+Route::middleware('guest')->group(function () {
+    Route::get('/login', [LoginController::class, 'showLogin'])->name('login');
+    Route::post('/login-handle', [LoginController::class, 'handleLogin'])->name('login.handle');
+});
 
-Route::prefix('admin')->group(function () {
-    Route::get('/dashboard', [DashboardController::class, 'index'])->name('admin.dashboard');
-    Route::get('/donation', [DonationController::class, 'index'])->name('admin.donation');
-    Route::prefix('/donation-program')->group(function () {
-        Route::get('/', [ProgramController::class, 'index'])->name('admin.program');
-        Route::post('/create', [ProgramController::class, 'store'])->name('admin.program.create');
-        Route::put('/update/{id}', [ProgramController::class, 'update'])->name('admin.program.update');
-        Route::delete('/delete/{id}', [ProgramController::class, 'destroy'])->name('admin.program.delete');
+Route::middleware('auth')->group(function () {
+    Route::post('/logout-handle', [LoginController::class, 'handleLogout'])->name('logout.handle');
+
+    Route::prefix('/admin')->group(function () {
+        Route::get('/dashboard', [DashboardController::class, 'index'])->name('admin.dashboard');
+        Route::get('/donation', [DonationController::class, 'index'])->name('admin.donation');
+        Route::prefix('/donation-program')->group(function () {
+            Route::get('/', [ProgramController::class, 'index'])->name('admin.program');
+            Route::post('/create', [ProgramController::class, 'store'])->name('admin.program.create');
+            Route::put('/update/{id}', [ProgramController::class, 'update'])->name('admin.program.update');
+            Route::delete('/delete/{id}', [ProgramController::class, 'destroy'])->name('admin.program.delete');
+        });
+        Route::get('/pengaturan', [SettingsController::class, 'index'])->name('admin.settings');
+
+        Route::prefix('/gallery')->group(function () {
+            Route::get('/', [GalleryController::class, 'index'])->name('admin.gallery');
+            Route::post('/create', [GalleryController::class, 'create'])->name('admin.gallery.create');
+            Route::delete('/delete/{id}', [GalleryController::class, 'destroy'])->name('admin.gallery.delete');
+        });
+
+        Route::middleware('role:SUPERADMIN')->group(function () {
+            Route::get('/admin', [AdminController::class, 'index'])->name('admin.admin');
+            Route::post('/admin/create', [AdminController::class, 'store'])->name('admin.admin.store');
+            Route::put('/admin/update/{id}', [AdminController::class, 'update'])->name('admin.admin.update');
+            Route::delete('/admin/delete/{id}', [AdminController::class, 'destroy'])->name('admin.admin.delete');
+        });
     });
-    Route::get('/pengaturan', [SettingsController::class, 'index'])->name('admin.settings');
-
-    Route::prefix('/gallery')->group(function () {
-        Route::get('/', [GalleryController::class, 'index'])->name('admin.gallery');
-        Route::post('/create', [GalleryController::class, 'create'])->name('admin.gallery.create');
-        Route::delete('/delete/{id}', [GalleryController::class, 'destroy'])->name('admin.gallery.delete');
-    });
-
-    
-    Route::get('/admin', [AdminController::class, 'index'])->name('admin.admin');
-    Route::post('/admin/create', [AdminController::class, 'store'])->name('admin.admin.store');
-    Route::put('/admin/update/{id}', [AdminController::class, 'update'])->name('admin.admin.update');
-    Route::delete('/admin/delete/{id}', [AdminController::class, 'destroy'])->name('admin.admin.delete');
-
 });

@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::table('users', function (Blueprint $table) {
             $table->string('status')->default('Aktif')->after('password');
+            $table->enum('role', ['SUPERADMIN', 'ADMIN'])->default('ADMIN');
         });
     }
 
