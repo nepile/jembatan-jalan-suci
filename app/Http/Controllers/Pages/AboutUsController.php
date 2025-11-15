@@ -2,14 +2,14 @@
 
 namespace App\Http\Controllers\Pages;
 
-use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
+use App\Models\Donation;
 
-class AboutUsController extends Controller
+class AboutUsController
 {
     public function index()
     {
-        return view('pages.about-us');
+        $totalDonatur = Donation::where('status', 'Sukses')->count();
+        return view('pages.about-us', compact('totalDonatur'));
     }
 }
     //

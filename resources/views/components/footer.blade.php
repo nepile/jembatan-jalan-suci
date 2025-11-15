@@ -13,10 +13,12 @@
             </div>
             <div class="col-md-6 text-center text-md-end">
                 <div class="social-icons mb-3">
-                    <i class="bi bi-facebook"></i>
-                    <i class="bi bi-twitter"></i>
-                    <i class="bi bi-instagram"></i>
-                    <i class="bi bi-youtube"></i>
+                    <a href="https://www.facebook.com/share/19z4hkVczN/" target="blank"><i
+                            class="bi bi-facebook"></i></a>
+                    <a href="https://www.instagram.com/pantiasuhan.jembatansuci?igsh=OG51NzZ2ZDRobWxx" target="blank"><i
+                            class="bi bi-instagram"></i></a>
+                    <a href="https://www.tiktok.com/@ladangtuhan140890?_r=1&_t=ZS-91QJZpkj1Vp" target="blank"><i
+                            class="bi bi-tiktok"></i></a>
                 </div>
                 <a href="#" class="btn btn-orange">Hubungi Kami</a>
             </div>

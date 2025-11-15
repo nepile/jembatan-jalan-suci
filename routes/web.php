@@ -10,6 +10,7 @@ use App\Http\Controllers\Admin\SettingsController;
 use App\Http\Controllers\Admin\GalleryController;
 use App\Http\Controllers\Pages\DonationController as PagesDonationController;
 use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\Pages\AboutUsController;
 use App\Http\Controllers\Pages\ConfirmationDonationController;
 use App\Http\Controllers\Pages\DonationProgramController;
 use App\Http\Controllers\Pages\GalleryController as PagesGalleryController;
@@ -22,9 +23,7 @@ Route::get('/', [HomeController::class, 'index'])->name('pages.home');
 //     return view('pages.general-donation');
 // })->name('pages.general-donation');
 
-Route::get('/about-us', function () {
-    return view('pages.about-us');
-})->name('pages.about-us');
+Route::get('/about-us', [AboutUsController::class, 'index'])->name('pages.about-us');
 
 Route::get('/donation-program', [DonationProgramController::class, 'index'])->name('pages.donation-program');
 
@@ -59,7 +58,7 @@ Route::middleware('auth')->group(function () {
             Route::put('/update/{id}', [ProgramController::class, 'update'])->name('admin.program.update');
             Route::delete('/delete/{id}', [ProgramController::class, 'destroy'])->name('admin.program.delete');
         });
-        
+
         Route::get('/pengaturan', [SettingsController::class, 'index'])->name('admin.settings');
         Route::post('/pengaturan/update-password', [SettingsController::class, 'updatePassword'])
             ->name('admin.settings.updatePassword');
