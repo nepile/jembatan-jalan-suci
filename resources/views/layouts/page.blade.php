@@ -12,7 +12,6 @@
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="{{ asset('css/color.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/page.css') }}">
 
     <!-- Lightbox CSS -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css" rel="stylesheet">
