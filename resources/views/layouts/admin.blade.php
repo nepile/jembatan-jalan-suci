@@ -8,6 +8,17 @@
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
     <link rel="icon" href="{{ asset('images/other/logo.jpeg') }}">
+    <style>
+        .nav-item .page-link {
+            color: #fff;
+        }
+
+        .active-menu {
+            text-decoration: underline;
+            color: #fff;
+            font-weight: bold;
+        }
+    </style>
 </head>
 
 <body class="bg-gray-100 font-sans antialiased" x-data>

@@ -1,14 +1,3 @@
-<style>
-    .nav-item .page-link {
-        color: #fff;
-    }
-
-    .active-menu {
-        text-decoration: underline;
-        color: #fff;
-        font-weight: bold;
-    }
-</style>
 <nav class="navbar navbar-expand-lg bg-primary border-top border-dark border-2">
     <div class="container">
         {{-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
