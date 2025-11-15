@@ -50,18 +50,30 @@
             </a>
 
             <a href="{{ route('admin.donation') }}"
-                class="flex items-center space-x-2 px-4 py-2 rounded-lg transition duration-150 ease-in-out 
+                class="flex items-center space-x-2 px-4 py-2 rounded-lg transition duration-150 
                     {{ request()->routeIs('admin.donation') ? 'bg-blue-700 text-white font-semibold shadow-md' : 'text-gray-200 hover:bg-blue-800' }}">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path d="M11 3a1 1 0 10-2 0v1a1 1 0 102 0V3zM8 5a1 1 0 011-1h2a1 1 0 110 2H9a1 1 0 01-1-1zM10 12a2 2 0 100-4 2 2 0 000 4zM16 12a4 4 0 10-8 0 4 4 0 008 0z" /></svg>
+                
+                <!-- IKON BARU DONASI -->
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M2.166 8.94a5.5 5.5 0 017.768-7.768L10 1.237l.066.066a5.5 5.5 0 017.768 7.768L10 18.605 2.166 8.94z"/>
+                </svg>
+
                 <span>Donasi</span>
             </a>
 
             <a href="{{ route('admin.program') }}"
-                class="flex items-center space-x-2 px-4 py-2 rounded-lg transition duration-150 ease-in-out 
+                class="flex items-center space-x-2 px-4 py-2 rounded-lg transition duration-150 
                     {{ request()->routeIs('admin.program') ? 'bg-blue-700 text-white font-semibold shadow-md' : 'text-gray-200 hover:bg-blue-800' }}">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path d="M11 12.062V10a1 1 0 00-2 0v2.062a2 2 0 100 3.876V16a1 1 0 102 0v-1.062a2 2 0 100-3.876z" /></svg>
+
+                <!-- IKON BARU PROGRAM DONASI -->
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M9 2a1 1 0 00-.894.553L7.382 4H4a2 2 0 00-2 2v9a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-3.382l-.724-1.447A1 1 0 0011 2H9z"/>
+                    <path d="M8.707 10.293a1 1 0 011.414 0L11 11.172l2.879-2.879a1 1 0 111.414 1.414L11 14l-3.707-3.707a1 1 0 010-1.414z"/>
+                </svg>
+
                 <span>Program Donasi</span>
             </a>
+
 
             <a href="{{ route('admin.gallery') }}"
                 class="flex items-center space-x-2 px-4 py-2 rounded-lg transition duration-150 ease-in-out 
@@ -71,9 +83,14 @@
             </a>
 
             <a href="{{ route('admin.settings') }}"
-                class="flex items-center space-x-2 px-4 py-2 rounded-lg transition duration-150 ease-in-out 
+                 class="flex items-center space-x-2 px-4 py-2 rounded-lg transition duration-150 
                     {{ request()->routeIs('admin.settings') ? 'bg-blue-700 text-white font-semibold shadow-md' : 'text-gray-200 hover:bg-blue-800' }}">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M11.49 3.17c-.38-.28-.86-.28-1.24 0L6.29 6.29c-.38.38-.38 1.02 0 1.4L10 11.4l3.71-3.71c.38-.38.38-1.02 0-1.4l-3.29-3.29zM10 13a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd" /></svg>
+
+                <!-- IKON BARU PENGATURAN -->
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M11.983 1.37a1 1 0 00-1.966 0l-.324 1.588a6.992 6.992 0 00-1.63.942L6.29 2.96a1 1 0 00-1.415 1.415l.94 1.773a7.01 7.01 0 00-.94 1.63L3.287 7.01a1 1 0 00-1.587 1.966l1.588.324c.139.58.33 1.14.569 1.674l-1.773.94a1 1 0 101.415 1.415l1.773-.94c.534.239 1.094.43 1.674.569l.324 1.588a1 1 0 001.966-1.966l-1.588-.324a7.01 7.01 0 00-.569-1.674l1.773-.94a1 1 0 10-1.415-1.415l-1.773.94a6.992 6.992 0 00-.942-1.63l1.588-.324A1 1 0 008.653 4.96l-.324-1.588a1 1 0 001.654-.962zM10 13a3 3 0 100-6 3 3 0 000 6z" clip-rule="evenodd"/>
+                </svg>
+
                 <span>Pengaturan</span>
             </a>
         </nav>
