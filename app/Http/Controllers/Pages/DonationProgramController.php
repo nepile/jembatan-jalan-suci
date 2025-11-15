@@ -11,7 +11,13 @@ class DonationProgramController
 {
     public function index()
     {
-        return view('pages.donation-program');
+        $data = [
+            'donationTotal' => Donation::where('status', 'Sukses')->sum('amount'),
+            'donaturTotal' => Donation::where('status', 'Sukses')->count(),
+            'donationProgramTotal' => DonationProgram::where('status', 'AKTIF')->count(),
+            'programs' => DonationProgram::where('status', 'AKTIF')->limit(3)->get(),
+        ];
+        return view('pages.donation-program', $data);
     }
 
     public function showDonationDetail($slug)

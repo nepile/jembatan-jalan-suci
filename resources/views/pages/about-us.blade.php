@@ -28,7 +28,7 @@
                     </div>
                 </div>
                 <div class="col-lg-6 text-center mt-4 mt-lg-0">
-                    <img src="{{ asset('images/image.png') }}" alt="Anak-anak panti asuhan"
+                    <img src="{{ asset('images/other/logo.jpeg') }}" alt="Anak-anak panti asuhan"
                         class="img-fluid rounded-3 shadow-lg" style="max-height: 380px; object-fit: cover;">
                 </div>
             </div>
@@ -41,27 +41,61 @@
             <div class="row g-5">
                 <div class="col-md-6">
                     <div class="text-center p-4">
+                        <div class="bg-info rounded-circle d-inline-flex align-items-center justify-content-center mb-3"
+                            style="width: 80px; height: 80px;">
+                            <i class="bi bi-eye-fill text-white fs-2"></i>
+                        </div>
+                        <h3 class="h4 fw-bold">Tujuan Kami</h3>
+                        <p class="text-muted">
+                            Memfasilitas anak-anak Yatim-Piatu, Broken Home dan Fakir Miskin dalam mencari, memilih dan
+                            menentukan arah hidup yang benar, sehingga memiliki pola hidup yang cerah, berguna bagi diri
+                            sendiri, keluarga, dan ditengah-tengah masyarakat.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="text-center p-4">
                         <div class="bg-warning rounded-circle d-inline-flex align-items-center justify-content-center mb-3"
                             style="width: 80px; height: 80px;">
                             <i class="bi bi-eye-fill text-white fs-2"></i>
                         </div>
                         <h3 class="h4 fw-bold">Visi Kami</h3>
                         <p class="text-muted">
-                            Menjadi panti asuhan teladan yang mencetak generasi berakhlak mulia, mandiri, dan berprestasi.
+                            Membantu dan memberikan kesempatan kepada anak-anak Yatim-Piatu, Broken Home dan Fakir Miskin
+                            untuk dapat memiliki jalan hidup yang layak ditengah-tengah masyarakat.
                         </p>
                     </div>
                 </div>
-                <div class="col-md-6">
-                    <div class="text-center p-4">
+                <div class="col-12">
+                    <div class="text-center d-flex justify-content-center align-items-center flex-column p-4">
                         <div class="bg-success rounded-circle d-inline-flex align-items-center justify-content-center mb-3"
                             style="width: 80px; height: 80px;">
                             <i class="bi bi-heart-fill text-white fs-2"></i>
                         </div>
                         <h3 class="h4 fw-bold">Misi Kami</h3>
-                        <p class="text-muted">
-                            Memberikan pendidikan berkualitas, pembinaan agama, kesehatan, dan kasih sayang seperti keluarga
-                            sendiri.
-                        </p>
+                        <div class="col-md-6 col">
+                            <ol class="text-start text-muted">
+                                <li>Melindungi dan membantu memberikan naungan tempat tinggal bagi anak-anak Yatim-Piatu,
+                                    Broken
+                                    Home dan Fakir Miskin;</li>
+                                <li>Memberikan pendidikan/binaan kepada anak-anak Yatim-Piatu, Broken Home dan Fakir Miskin
+                                    agar
+                                    dapat memiliki ilmu pengetahuan formal dan non formal untuk bekal hidup dimasa yang akan
+                                    datang;</li>
+                                <li>
+                                    Memberikan makanan yang sehat dan bergizi;
+                                </li>
+                                <li>
+                                    Memberikan Pendidikan Rohani;
+                                </li>
+                                <li>
+                                    Memberikan Pendidikan di sekolah-sekolah yang baik;
+                                </li>
+                                <li>
+                                    Memberikan bimbingan Psikologi.
+                                </li>
+                            </ol>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -77,12 +111,14 @@
                     <p class="text-muted">Anak Asuh</p>
                 </div>
                 <div class="col-6 col-md-3">
-                    <h2 class="display-5 fw-bold text-primary">4</h2>
+                    <h2 class="display-5 fw-bold text-primary">
+                        2021
+                    </h2>
                     <p class="text-muted">Tahun Berdiri</p>
                 </div>
                 <div class="col-6 col-md-3">
-                    <h2 class="display-5 fw-bold text-primary">100%</h2>
-                    <p class="text-muted">Lulusan Melanjutkan</p>
+                    <h2 class="display-5 fw-bold text-primary">6</h2>
+                    <p class="text-muted">Pengurus</p>
                 </div>
                 <div class="col-6 col-md-3">
                     <h2 class="display-5 fw-bold text-primary">638</h2>
@@ -100,7 +136,7 @@
                 <div class="col-lg-6 text-center">
                     <div class="text-center">
                         <div class="mx-auto mb-4" style="width: 500px; height: 500px;">
-                            <img src="{{ asset('images/pengurus.jpeg') }}" alt="Ust. Ahmad Fauzi"
+                            <img src="{{ asset('images/other/pengurus.jpeg') }}" alt="Ust. Ahmad Fauzi"
                                 class="img-fluid w-100 h-100"
                                 style="object-fit: cover; border: 4px solid #ddd; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
                         </div>

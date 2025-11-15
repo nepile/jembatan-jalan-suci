@@ -68,8 +68,8 @@
                 <div class="position-relative z-1 text-white text-center">
                     <h1 class="fw-bold mb-3 display-4">Panti Asuhan Jembatan Jalan Suci</h1>
                     <p class="mb-4 lead">
-                        Uluran tangan Anda adalah jembatan menuju masa depan cerah bagi anak-anak yatim dan dhuafa. <br>
-                        Mari berbagi kebahagiaan bersama kami.
+                        Tangan Anda adalah Jembatan Emas menuju masa depan para Bintang. <br> Bersama kami, Anda adalah
+                        Arsitek Takdir. Mari berbagi Energi Bahagia ini.
                     </p>
                     <div class="d-flex justify-content-center gap-3">
                         <a href="{{ route('pages.donation-program') }}" class="btn btn-primary fw-bold btn-lg">Program
@@ -93,7 +93,6 @@
                 </div>
             </div>
 
-            {{-- Dummy Card Program --}}
             <div class="row g-4 mb-5">
                 @foreach ($programs as $program)
                     <div class="col-lg-4 col-md-6">
@@ -113,6 +112,11 @@
                         </div>
                     </div>
                 @endforeach
+                @if ($programs->isEmpty())
+                    <div class="col-12 bg-light text-secondary text-center p-4 rounded-3">
+                        Belum ada program donasi.
+                    </div>
+                @endif
             </div>
 
             <div class="text-center mt-4">
@@ -129,17 +133,19 @@
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-lg-6 p-4">
-                        <h2 class="mb-4 fw-bold">Tentang Yayasan Umat Mandiri Nusantara</h2>
+                        <h2 class="mb-4 fw-bold">Tentang Panti Asuhan Jembatan Jalan Suci</h2>
                         <p class="mb-4">
-                            Yayasan Umat Mandiri Nusantara (Panti Yauma) merupakan organisasi **nirlaba** yang bergerak di
-                            bidang sosial dan pendidikan sebagai fasilitator antara kaum **aghniya dan dhuafa**. Kami
-                            berdedikasi untuk memberikan bimbingan, pendidikan, dan kasih sayang.
+                            Panti Asuhan Jembatan Jalan Suci adalah sebuah lembaga sosial yang berdedikasi untuk memberikan
+                            perlindungan, pendidikan, dan kasih sayang kepada anak-anak yatim, piatu, dan anak-anak kurang
+                            mampu. Berdiri dengan misi membangun masa depan yang lebih baik bagi generasi muda, panti asuhan
+                            ini tidak hanya menyediakan kebutuhan dasar seperti tempat tinggal, makan, dan pakaian, tetapi
+                            juga menekankan pada pendidikan formal dan pengembangan karakter.
                         </p>
                         <a href="{{ route('pages.about-us') }}" class="btn btn-light fw-bold">Selengkapnya</a>
                     </div>
                     <div class="col-lg-6 d-none d-lg-block">
-                        <img src="{{ asset('images/image copy 4.png') }}" class="img-fluid rounded shadow-lg"
-                            alt="Visi Misi">
+                        <img src="{{ asset('images/aboutus.jpeg') }}" class="img-fluid rounded shadow-lg"
+                            alt="Tentang Kami">
                     </div>
                 </div>
             </div>
@@ -158,18 +164,19 @@
             </div>
 
             <div class="row g-3">
-                @php
-                    $galleryImages = ['image copy.png', 'image copy 2.png', 'image copy 3.png', 'image copy 4.png'];
-                @endphp
-
-                @foreach ($galleryImages as $image)
+                @foreach ($galleries as $image)
                     <div class="col-6 col-md-3">
                         <div class="overflow-hidden rounded shadow-sm" style="height: 200px;">
-                            <img src="{{ asset('images/' . $image) }}" alt="Galeri" class="w-100 h-100 object-fit-cover"
+                            <img src="{{ asset($image->banner) }}" alt="Galeri" class="w-100 h-100 object-fit-cover"
                                 loading="lazy">
                         </div>
                     </div>
                 @endforeach
+                @if ($galleries->isEmpty())
+                    <div class="col-12 bg-light text-secondary text-center p-4 rounded-3">
+                        Belum ada kegiatan galeri.
+                    </div>
+                @endif
                 {{-- Tombol menuju halaman galeri lengkap --}}
                 <div class="text-center mt-4">
                     <a href="{{ route('pages.gallery') }}" class="btn btn-primary fw-bold px-4 py-2">
