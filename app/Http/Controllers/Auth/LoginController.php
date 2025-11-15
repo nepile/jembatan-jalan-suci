@@ -7,11 +7,11 @@ use Illuminate\Support\Facades\Auth;
 
 class LoginController
 {
-    public function showLogin() 
+    public function showLogin()
     {
         return view('auth.login');
     }
-    
+
     public function handleLogin(Request $request)
     {
         $credentials = $request->validate([
@@ -22,12 +22,15 @@ class LoginController
             'email.email' => 'Masukkan format email yang sesuai',
             'password.required' => 'Kata sandi tidak boleh kosong',
         ]);
-        
+
         if (Auth::attempt($credentials)) {
+            if (Auth::user()->status == 'Nonaktif') {
+                return back()->with('danger', 'Maaf, akun anda sudah dinonaktifkan');
+            }
             $request->session()->regenerate();
             return redirect()->route('admin.dashboard');
         }
-        
+
         return back()->with('danger', 'Email atau kata sandi salah.');
     }
 
