@@ -2,11 +2,13 @@
     <div class="container text-center text-md-start">
         <div class="row">
             <div class="col-md-6">
-                <img src="{{ asset('images/logo.jpeg') }}" alt="Yauma Logo" height="50" class="mb-3">
+                <div class="d-flex align-items-center mb-3 gap-3">
+                    <img src="{{ asset('images/other/logo.jpeg') }}" alt="Yauma Logo" height="50">
+                    <span class="fs-6"><strong>PANTI ASUHAN <br> JEMBATAN JALAN SUCI</strong></span>
+                </div>
                 <p>
-                    Yayasan Umat Mandiri Nusantara (Panti Yauma) merupakan organisasi nirlaba
-                    yang bergerak di bidang sosial dan pendidikan sebagai fasilitator
-                    antara kaum aghniya dan dhuafa.
+                    Panti Asuhan Jembatan Jalan Suci adalah lembaga sosial yang memberikan perlindungan, pendidikan, dan
+                    kasih sayang bagi anak-anak yatim, piatu, dan kurang mampu.
                 </p>
             </div>
             <div class="col-md-6 text-center text-md-end">
@@ -21,8 +23,7 @@
         </div>
     </div>
 
-    <div class="footer-bottom">
-        COPYRIGHT © 2025 Donasi Yauma. Created with love by
-        <a href="#" class="text-white fw-bold text-decoration-underline">Kurma Media</a>
+    <div class="footer-bottom mt-5">
+        COPYRIGHT © 2025 Panti Asuhan Jembatan Jalan Suci
     </div>
 </footer>
