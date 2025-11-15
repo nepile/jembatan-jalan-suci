@@ -29,7 +29,7 @@
         <!-- Logo -->
         <div class="p-6 border-b border-blue-800 flex items-center justify-center">
             <a href="{{ route('admin.dashboard') }}" class="flex flex-col items-center">
-                <img src="{{ asset('images/logo.jpeg') }}" alt="Logo" width="100" class="rounded mb-2 shadow-lg">
+                <img src="{{ asset('images/other/logo.jpeg') }}" alt="Logo" width="100" class="rounded mb-2 shadow-lg">
             </a>
         </div>
 

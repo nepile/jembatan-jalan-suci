@@ -62,5 +62,10 @@ Route::prefix('admin')->group(function () {
         Route::delete('/delete/{id}', [GalleryController::class, 'destroy'])->name('admin.gallery.delete');
     });
 
+    
     Route::get('/admin', [AdminController::class, 'index'])->name('admin.admin');
+    Route::post('/admin/create', [AdminController::class, 'store'])->name('admin.admin.store');
+    Route::put('/admin/update/{id}', [AdminController::class, 'update'])->name('admin.admin.update');
+    Route::delete('/admin/delete/{id}', [AdminController::class, 'destroy'])->name('admin.admin.delete');
+
 });
